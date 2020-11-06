@@ -1,0 +1,157 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Net.Http;
+using System.Numerics;
+using System.Text;
+using System.Windows.Forms;
+
+namespace frontend
+{
+    public partial class FormFindDesk : Form
+    {
+        public FormFindDesk()
+        {
+            InitializeComponent();
+        }
+
+        private async void EnterDesk(int desk, int seat)
+        {
+            HttpClient httpClient = new HttpClient();
+            string url = Url.Header + Url.EnterDesk;
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("uid", Global.uid));
+            parameters.Add(new KeyValuePair<string, string>("password", Global.password));
+            parameters.Add(new KeyValuePair<string, string>("desk", Convert.ToString(desk)));
+            parameters.Add(new KeyValuePair<string, string>("seat", Convert.ToString(seat)));
+            parameters.Add(new KeyValuePair<string, string>("attribute", "sitdown"));
+            var response = await httpClient.PostAsync(new Uri(url), new FormUrlEncodedContent(parameters));
+            var result = await response.Content.ReadAsStringAsync();
+            MessageBox.Show(result);
+        }
+
+        private async void FormFindDesk_Load(object sender, EventArgs e)
+        {
+            HttpClient httpClient = new HttpClient();
+            string url = Url.Header + Url.GetDeskListUrl;
+            var response = await httpClient.PostAsync(new Uri(url),
+                new FormUrlEncodedContent(new List<KeyValuePair<string, string>>()));
+            var result = await response.Content.ReadAsStringAsync();
+            string[] Desks = result.Split("\n");
+            foreach (var desk in Desks)
+            {
+                var info = desk.Split(" ");
+                switch (info[0])
+                {
+                    case "1":
+                        if (info[1] != "0")
+                        {
+                            button2.Text = info[1];
+                            button2.Enabled = false;
+                        }
+
+                        if (info[2] != "0")
+                        {
+                            button3.Text = info[2];
+                            button3.Enabled = false;
+                        }
+
+                        break;
+                    case "2":
+                        if (info[1] != "0")
+                        {
+                            button5.Text = info[1];
+                            button5.Enabled = false;
+                        }
+
+                        if (info[2] != "0")
+                        {
+                            button6.Text = info[2];
+                            button6.Enabled = false;
+                        }
+
+                        break;
+                    case "3":
+                        if (info[1] != "0")
+                        {
+                            button8.Text = info[1];
+                            button8.Enabled = false;
+                        }
+
+                        if (info[2] != "0")
+                        {
+                            button9.Text = info[2];
+                            button9.Enabled = false;
+                        }
+
+                        break;
+                    case "4":
+                        if (info[1] != "0")
+                        {
+                            button11.Text = info[1];
+                            button11.Enabled = false;
+                        }
+
+                        if (info[2] != "0")
+                        {
+                            button12.Text = info[2];
+                            button12.Enabled = false;
+                        }
+
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            httpClient.Dispose();
+        }
+
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            EnterDesk(1, 1);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            EnterDesk(1, 2);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            EnterDesk(2, 1);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            EnterDesk(2, 2);
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            EnterDesk(3, 1);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            EnterDesk(3, 2);
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            EnterDesk(4, 1);
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            EnterDesk(4, 2);
+        }
+    }
+}

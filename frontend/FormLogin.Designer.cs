@@ -1,0 +1,95 @@
+﻿namespace frontend
+{
+    partial class FormLogin
+    {
+        /// <summary>
+        ///  Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        ///  Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        ///  Required method for Designer support - do not modify
+        ///  the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
+            this.textBox_uid = new System.Windows.Forms.TextBox();
+            this.textBox_password = new System.Windows.Forms.TextBox();
+            this.label_uid = new System.Windows.Forms.Label();
+            this.label_password = new System.Windows.Forms.Label();
+            this.button_submit = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // textBox_uid
+            // 
+            resources.ApplyResources(this.textBox_uid, "textBox_uid");
+            this.textBox_uid.Name = "textBox_uid";
+            this.textBox_uid.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // textBox_password
+            // 
+            resources.ApplyResources(this.textBox_password, "textBox_password");
+            this.textBox_password.Name = "textBox_password";
+            this.textBox_password.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // label_uid
+            // 
+            resources.ApplyResources(this.label_uid, "label_uid");
+            this.label_uid.Name = "label_uid";
+            this.label_uid.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label_password
+            // 
+            resources.ApplyResources(this.label_password, "label_password");
+            this.label_password.Name = "label_password";
+            this.label_password.Click += new System.EventHandler(this.label_password_Click);
+            // 
+            // button_submit
+            // 
+            resources.ApplyResources(this.button_submit, "button_submit");
+            this.button_submit.Name = "button_submit";
+            this.button_submit.UseVisualStyleBackColor = true;
+            this.button_submit.Click += new System.EventHandler(this.button_submit_Click);
+            // 
+            // FormLogin
+            // 
+            resources.ApplyResources(this, "$this");
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button_submit);
+            this.Controls.Add(this.label_password);
+            this.Controls.Add(this.label_uid);
+            this.Controls.Add(this.textBox_password);
+            this.Controls.Add(this.textBox_uid);
+            this.Name = "FormLogin";
+            this.Load += new System.EventHandler(this.FormLogin_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.TextBox textBox_uid;
+        private System.Windows.Forms.TextBox textBox_password;
+        private System.Windows.Forms.Label label_uid;
+        private System.Windows.Forms.Label label_password;
+        private System.Windows.Forms.Button button_submit;
+    }
+}
