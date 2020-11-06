@@ -8,5 +8,6 @@ namespace frontend
     {
         public static string uid = "";
         public static string password = "";
+        public static int seat = 0;
     }
 }

@@ -43,6 +43,14 @@ namespace frontend
             foreach (var desk in Desks)
             {
                 var info = desk.Split(" ");
+                if (info[1].Equals(Global.uid) || info[2].Equals(Global.uid))
+                {
+                    FormDesk formDesk = new FormDesk();
+                    formDesk.Show();
+                    Hide();
+                    Global.seat = info[1].Equals(Global.uid) ? 1 : 2;
+                    return;
+                }
                 switch (info[0])
                 {
                     case "1":
@@ -71,7 +79,6 @@ namespace frontend
                             button6.Text = info[2];
                             button6.Enabled = false;
                         }
-
                         break;
                     case "3":
                         if (info[1] != "0")
