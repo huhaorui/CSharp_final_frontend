@@ -78,6 +78,7 @@
             this.Controls.Add(this.textBox_password);
             this.Controls.Add(this.textBox_uid);
             this.Name = "FormLogin";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLogin_FormClosing);
             this.Load += new System.EventHandler(this.FormLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

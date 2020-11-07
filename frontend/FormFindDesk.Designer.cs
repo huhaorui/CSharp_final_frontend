@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -40,6 +41,7 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // button3
@@ -155,6 +157,12 @@
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 3000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormFindDesk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -174,6 +182,7 @@
             this.Controls.Add(this.button3);
             this.Name = "FormFindDesk";
             this.Text = "FormFindDesk";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormFindDesk_FormClosing);
             this.Load += new System.EventHandler(this.FormFindDesk_Load);
             this.ResumeLayout(false);
 
@@ -193,5 +202,6 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Timer timer1;
     }
 }

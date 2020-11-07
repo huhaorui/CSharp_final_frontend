@@ -39,12 +39,13 @@ namespace frontend
         {
 
         }
+
         private void button_submit_Click(object sender, EventArgs e)
         {
             HttpClient httpClient = new HttpClient();
-            String url = Url.Header + Url.LoginUrl;
-            String username = textBox_uid.Text;
-            String password = textBox_password.Text;
+            string url = Url.Header + Url.LoginUrl;
+            string username = textBox_uid.Text;
+            string password = textBox_password.Text;
             List<KeyValuePair<string, string>> paramList = new List<KeyValuePair<string, string>>();
             paramList.Add(new KeyValuePair<string, string>("uid", username));
             paramList.Add(new KeyValuePair<string, string>("password", password));
@@ -65,6 +66,11 @@ namespace frontend
         private void FormLogin_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
