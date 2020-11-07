@@ -11,6 +11,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace frontend
 {
@@ -39,25 +40,49 @@ namespace frontend
         {
 
         }
-
-        private void button_submit_Click(object sender, EventArgs e)
+        private void button_register_Click(object sender, EventArgs e)
         {
             HttpClient httpClient = new HttpClient();
-            string url = Url.Header + Url.LoginUrl;
+            string url = Url.Header + Url.RegisterUrl;
             string username = textBox_uid.Text;
             string password = textBox_password.Text;
-            List<KeyValuePair<string, string>> paramList = new List<KeyValuePair<string, string>>();
-            paramList.Add(new KeyValuePair<string, string>("uid", username));
-            paramList.Add(new KeyValuePair<string, string>("password", password));
+            List<KeyValuePair<string, string>> paramList = new List<KeyValuePair<string, string>>
+            {
+                new KeyValuePair<string, string>("uid", username),
+                new KeyValuePair<string, string>("password", password)
+            };
             var response = httpClient.PostAsync(new Uri(url), new FormUrlEncodedContent(paramList)).Result;
             var result = response.Content.ReadAsStringAsync().Result;
             if (result.Equals("OK"))
             {
                 Global.uid = textBox_uid.Text;
                 Global.password = textBox_password.Text;
-                this.Hide();
+                Hide();
                 var formFindDesk = new FormFindDesk();
-              
+                formFindDesk.Show();
+            }
+            httpClient.Dispose();
+        }
+        private void button_submit_Click(object sender, EventArgs e)
+        {
+            HttpClient httpClient = new HttpClient();
+            string url = Url.Header + Url.LoginUrl;
+            string username = textBox_uid.Text;
+            string password = textBox_password.Text;
+            List<KeyValuePair<string, string>> paramList = new List<KeyValuePair<string, string>>
+            {
+                new KeyValuePair<string, string>("uid", username),
+                new KeyValuePair<string, string>("password", password)
+            };
+            var response = httpClient.PostAsync(new Uri(url), new FormUrlEncodedContent(paramList)).Result;
+            var result = response.Content.ReadAsStringAsync().Result;
+            if (result.Equals("OK"))
+            {
+                Global.uid = textBox_uid.Text;
+                Global.password = textBox_password.Text;
+                Hide();
+                var formFindDesk = new FormFindDesk();
+
                 formFindDesk.Show();
             }
             httpClient.Dispose();

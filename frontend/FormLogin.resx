@@ -78,7 +78,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;textBox_uid.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="textBox_password.Location" type="System.Drawing.Point, System.Drawing.Primitives">
     <value>233, 193</value>
@@ -99,7 +99,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;textBox_password.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="label_uid.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
@@ -126,7 +126,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label_uid.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="label_password.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
@@ -153,10 +153,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label_password.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="button_submit.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>178, 289</value>
+    <value>178, 271</value>
   </data>
   <data name="button_submit.Size" type="System.Drawing.Size, System.Drawing.Primitives">
     <value>75, 23</value>
@@ -177,6 +177,30 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button_submit.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="button_register.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>178, 310</value>
+  </data>
+  <data name="button_register.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>75, 23</value>
+  </data>
+  <data name="button_register.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>4</value>
+  </data>
+  <data name="button_register.Text" xml:space="preserve">
+    <value>注册</value>
+  </data>
+  <data name="&gt;&gt;button_register.Name" xml:space="preserve">
+    <value>button_register</value>
+  </data>
+  <data name="&gt;&gt;button_register.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_register.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button_register.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
@@ -189,7 +213,7 @@
     <value>452, 355</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>登录</value>
+    <value>注册</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FormLogin</value>

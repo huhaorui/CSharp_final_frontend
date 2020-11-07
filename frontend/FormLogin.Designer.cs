@@ -35,6 +35,7 @@
             this.label_uid = new System.Windows.Forms.Label();
             this.label_password = new System.Windows.Forms.Label();
             this.button_submit = new System.Windows.Forms.Button();
+            this.button_register = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox_uid
@@ -68,10 +69,18 @@
             this.button_submit.UseVisualStyleBackColor = true;
             this.button_submit.Click += new System.EventHandler(this.button_submit_Click);
             // 
+            // button_register
+            // 
+            resources.ApplyResources(this.button_register, "button_register");
+            this.button_register.Name = "button_register";
+            this.button_register.UseVisualStyleBackColor = true;
+            this.button_register.Click += new System.EventHandler(this.button_register_Click);
+            // 
             // FormLogin
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button_register);
             this.Controls.Add(this.button_submit);
             this.Controls.Add(this.label_password);
             this.Controls.Add(this.label_uid);
@@ -92,5 +101,6 @@
         private System.Windows.Forms.Label label_uid;
         private System.Windows.Forms.Label label_password;
         private System.Windows.Forms.Button button_submit;
+        private System.Windows.Forms.Button button_register;
     }
 }
