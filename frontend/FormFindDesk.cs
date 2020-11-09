@@ -45,8 +45,8 @@ namespace frontend
             var response = await httpClient.PostAsync(new Uri(url),
                 new FormUrlEncodedContent(new List<KeyValuePair<string, string>>()));
             var result = await response.Content.ReadAsStringAsync();
-            string[] Desks = result.Split("\n");
-            foreach (var desk in Desks)
+            string[] desks = result.Split("\n");
+            foreach (var desk in desks)
             {
                 var info = desk.Split(" ");
                 if (info.Length < 3)

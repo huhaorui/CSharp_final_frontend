@@ -83,6 +83,9 @@
   <data name="textBox_password.Location" type="System.Drawing.Point, System.Drawing.Primitives">
     <value>233, 193</value>
   </data>
+  <data name="textBox_password.PasswordChar" type="System.Char, System.Private.CoreLib" xml:space="preserve">
+    <value>*</value>
+  </data>
   <data name="textBox_password.Size" type="System.Drawing.Size, System.Drawing.Primitives">
     <value>100, 23</value>
   </data>

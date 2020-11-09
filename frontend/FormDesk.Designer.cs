@@ -44,6 +44,8 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button_ready = new System.Windows.Forms.Button();
             this.button_standup = new System.Windows.Forms.Button();
+            this.label_myscore = new System.Windows.Forms.Label();
+            this.label_otherscore = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -190,11 +192,31 @@
             this.button_standup.UseVisualStyleBackColor = true;
             this.button_standup.Click += new System.EventHandler(this.button_standup_Click);
             // 
+            // label_myscore
+            // 
+            this.label_myscore.AutoSize = true;
+            this.label_myscore.Location = new System.Drawing.Point(49, 186);
+            this.label_myscore.Name = "label_myscore";
+            this.label_myscore.Size = new System.Drawing.Size(43, 17);
+            this.label_myscore.TabIndex = 6;
+            this.label_myscore.Text = "label1";
+            // 
+            // label_otherscore
+            // 
+            this.label_otherscore.AutoSize = true;
+            this.label_otherscore.Location = new System.Drawing.Point(681, 196);
+            this.label_otherscore.Name = "label_otherscore";
+            this.label_otherscore.Size = new System.Drawing.Size(43, 17);
+            this.label_otherscore.TabIndex = 7;
+            this.label_otherscore.Text = "label1";
+            // 
             // FormDesk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label_otherscore);
+            this.Controls.Add(this.label_myscore);
             this.Controls.Add(this.button_standup);
             this.Controls.Add(this.button_ready);
             this.Controls.Add(this.label_desknumber);
@@ -235,5 +257,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button_ready;
         private System.Windows.Forms.Button button_standup;
+        private System.Windows.Forms.Label label_myscore;
+        private System.Windows.Forms.Label label_otherscore;
     }
 }

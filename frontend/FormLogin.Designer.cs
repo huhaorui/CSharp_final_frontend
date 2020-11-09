@@ -48,6 +48,7 @@
             // 
             resources.ApplyResources(this.textBox_password, "textBox_password");
             this.textBox_password.Name = "textBox_password";
+            this.textBox_password.TabStop = false;
             this.textBox_password.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label_uid
