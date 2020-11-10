@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDesk));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -46,25 +47,31 @@
             this.button_standup = new System.Windows.Forms.Button();
             this.label_myscore = new System.Windows.Forms.Label();
             this.label_otherscore = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.Location = new System.Drawing.Point(270, 97);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(83, 83);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "☻";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Microsoft YaHei UI", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button2.Location = new System.Drawing.Point(359, 97);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(83, 83);
             this.button2.TabIndex = 0;
-            this.button2.Text = "button2";
+            this.button2.Text = "▲";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -141,30 +148,36 @@
             // label_myname
             // 
             this.label_myname.AutoSize = true;
-            this.label_myname.Location = new System.Drawing.Point(49, 97);
+            this.label_myname.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_myname.Location = new System.Drawing.Point(105, 243);
             this.label_myname.Name = "label_myname";
-            this.label_myname.Size = new System.Drawing.Size(43, 17);
+            this.label_myname.Size = new System.Drawing.Size(55, 21);
             this.label_myname.TabIndex = 1;
             this.label_myname.Text = "label1";
+            this.label_myname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label_myname.Click += new System.EventHandler(this.label1_Click);
             // 
             // label_othername
             // 
             this.label_othername.AutoSize = true;
-            this.label_othername.Location = new System.Drawing.Point(681, 97);
+            this.label_othername.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_othername.Location = new System.Drawing.Point(648, 244);
             this.label_othername.Name = "label_othername";
-            this.label_othername.Size = new System.Drawing.Size(43, 17);
+            this.label_othername.Size = new System.Drawing.Size(55, 21);
             this.label_othername.TabIndex = 2;
             this.label_othername.Text = "label2";
+            this.label_othername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label_desknumber
             // 
             this.label_desknumber.AutoSize = true;
-            this.label_desknumber.Location = new System.Drawing.Point(252, 32);
+            this.label_desknumber.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_desknumber.Location = new System.Drawing.Point(373, 32);
             this.label_desknumber.Name = "label_desknumber";
-            this.label_desknumber.Size = new System.Drawing.Size(43, 17);
+            this.label_desknumber.Size = new System.Drawing.Size(69, 27);
             this.label_desknumber.TabIndex = 3;
             this.label_desknumber.Text = "label1";
+            this.label_desknumber.Click += new System.EventHandler(this.label_desknumber_Click);
             // 
             // timer1
             // 
@@ -174,7 +187,7 @@
             // 
             // button_ready
             // 
-            this.button_ready.Location = new System.Drawing.Point(661, 362);
+            this.button_ready.Location = new System.Drawing.Point(639, 400);
             this.button_ready.Name = "button_ready";
             this.button_ready.Size = new System.Drawing.Size(75, 23);
             this.button_ready.TabIndex = 4;
@@ -184,7 +197,7 @@
             // 
             // button_standup
             // 
-            this.button_standup.Location = new System.Drawing.Point(661, 318);
+            this.button_standup.Location = new System.Drawing.Point(639, 356);
             this.button_standup.Name = "button_standup";
             this.button_standup.Size = new System.Drawing.Size(75, 23);
             this.button_standup.TabIndex = 5;
@@ -195,26 +208,53 @@
             // label_myscore
             // 
             this.label_myscore.AutoSize = true;
-            this.label_myscore.Location = new System.Drawing.Point(49, 186);
+            this.label_myscore.Location = new System.Drawing.Point(112, 275);
             this.label_myscore.Name = "label_myscore";
             this.label_myscore.Size = new System.Drawing.Size(43, 17);
             this.label_myscore.TabIndex = 6;
             this.label_myscore.Text = "label1";
+            this.label_myscore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label_otherscore
             // 
             this.label_otherscore.AutoSize = true;
-            this.label_otherscore.Location = new System.Drawing.Point(681, 196);
+            this.label_otherscore.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label_otherscore.Location = new System.Drawing.Point(653, 270);
             this.label_otherscore.Name = "label_otherscore";
             this.label_otherscore.Size = new System.Drawing.Size(43, 17);
             this.label_otherscore.TabIndex = 7;
             this.label_otherscore.Text = "label1";
+            this.label_otherscore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(81, 135);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(623, 135);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // FormDesk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label_otherscore);
             this.Controls.Add(this.label_myscore);
             this.Controls.Add(this.button_standup);
@@ -232,9 +272,11 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "FormDesk";
-            this.Text = "FormDesk";
+            this.Text = "游戏界面";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormDesk_FormClosing_1);
             this.Load += new System.EventHandler(this.FormDesk_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,5 +301,7 @@
         private System.Windows.Forms.Button button_standup;
         private System.Windows.Forms.Label label_myscore;
         private System.Windows.Forms.Label label_otherscore;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

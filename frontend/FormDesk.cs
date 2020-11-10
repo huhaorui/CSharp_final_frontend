@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Net.Http;
 using System.Windows.Forms;
 
@@ -34,9 +35,9 @@ namespace frontend
                 return;
             }
 
-            label_desknumber.Text = result.Split(":")[0];
+            label_desknumber.Text = "第" + result.Split(":")[0] + "桌";
             ShowStatus(result.Split(":")[1]);
-            Judge(result.Split(":")[1]);
+            Judge(result.Split(":")[2]);
             Ready(result.Split(":")[3]);
             if (Win(result.Split(":")[1]) == Global.seat)
             {
@@ -56,18 +57,40 @@ namespace frontend
                 Global.GameBegin = false;
                 button_ready.Visible = true;
             }
-            label_myname.Text = result.Split(":")[4];
-            label_othername.Text = result.Split(":")[5];
-            label_myscore.Text = result.Split(":")[6];
-            label_otherscore.Text = result.Split(":")[7];
+            label_myname.Text = "▲  " + result.Split(":")[4];
+            label_othername.Text = "☻  " + result.Split(":")[5];
+            if (label_myname.Text != "▲  ")
+            {
+                label_myscore.Text = result.Split(":")[6];
+                pictureBox1.Visible = true;
+            }
+            else
+            {
+                label_myscore.Text = "";
+                pictureBox1.Visible = false;
+            }
+
+
+            if (label_othername.Text != "☻  ")
+            {
+                label_otherscore.Text = result.Split(":")[7];
+                pictureBox2.Visible = true;
+            }
+            else
+            {
+                label_otherscore.Text = "";
+                pictureBox2.Visible = false;
+            }
             timer1.Start();
         }
 
         private void SetStatus(Button button, char status)
         {
+            button.Font = new Font("等线", 20, FontStyle.Bold);
+
             if (status != '0')
             {
-                button.Text = status.ToString();
+                button.Text = status == '1' ? "▲" : "☻";
                 button.Enabled = false;
             }
             else
@@ -204,14 +227,34 @@ namespace frontend
                 return;
             }
 
-            label_desknumber.Text = result.Split(":")[0];
+            label_desknumber.Text = "第" + result.Split(":")[0] + "桌";
             ShowStatus(result.Split(":")[1]);
-            Judge(result.Split(":")[1]);
+            Judge(result.Split(":")[2]);
             Ready(result.Split(":")[3]);
-            label_myname.Text = result.Split(":")[4];
-            label_othername.Text = result.Split(":")[5];
-            label_myscore.Text = result.Split(":")[6];
-            label_otherscore.Text = result.Split(":")[7];
+            label_myname.Text = "▲  " + result.Split(":")[4];
+            label_othername.Text = "☻  " + result.Split(":")[5];
+            if (label_myname.Text != "▲  ")
+            {
+                label_myscore.Text = result.Split(":")[6];
+                pictureBox1.Visible = true;
+            }
+            else
+            {
+                label_myscore.Text = "";
+                pictureBox1.Visible = false;
+            }
+
+
+            if (label_othername.Text != "☻  ")
+            {
+                label_otherscore.Text = result.Split(":")[7];
+                pictureBox2.Visible = true;
+            }
+            else
+            {
+                label_otherscore.Text = "";
+                pictureBox2.Visible = false;
+            }
             timer1.Interval = 300;
         }
 
@@ -246,46 +289,55 @@ namespace frontend
 
         private void button1_Click(object sender, EventArgs e)
         {
+            button1.Enabled = false;
             Press(0);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            button2.Enabled = false;
             Press(1);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            button3.Enabled = false;
             Press(2);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            button4.Enabled = false;
             Press(3);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            button5.Enabled = false;
             Press(4);
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
+            button6.Enabled = false;
             Press(5);
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
+            button7.Enabled = false;
             Press(6);
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
+            button8.Enabled = false;
             Press(7);
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
+            button9.Enabled = false;
             Press(8);
         }
 
@@ -306,7 +358,7 @@ namespace frontend
             {
                 FormFindDesk formDesk = new FormFindDesk();
                 formDesk.Show();
-                this.Dispose();
+                Dispose();
             }
         }
 
@@ -314,6 +366,16 @@ namespace frontend
         private void FormDesk_FormClosing_1(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void label_desknumber_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

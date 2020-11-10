@@ -34,7 +34,7 @@ namespace frontend
                 Global.seat = seat;
                 FormDesk formDesk = new FormDesk();
                 formDesk.Show();
-                this.Hide();
+                Dispose();
             }
         }
 
@@ -57,7 +57,7 @@ namespace frontend
                 {
                     FormDesk formDesk = new FormDesk();
                     formDesk.Show();
-                    Hide();
+                    Dispose();
                     Global.seat = info[1].Equals(Global.uid) ? 1 : 2;
                     return;
                 }
