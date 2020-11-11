@@ -14,6 +14,10 @@ namespace frontend
     {
         public FormFindDesk()
         {
+            this.DoubleBuffered = true;//设置本窗体
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true); // 禁止擦除背景.
+            SetStyle(ControlStyles.DoubleBuffer, true); // 双缓冲
             InitializeComponent();
         }
 
@@ -42,8 +46,7 @@ namespace frontend
         {
             HttpClient httpClient = new HttpClient();
             string url = Url.Header + Url.GetDeskListUrl;
-            var response = await httpClient.PostAsync(new Uri(url),
-                new FormUrlEncodedContent(new List<KeyValuePair<string, string>>()));
+            var response = await httpClient.PostAsync(new Uri(url), new FormUrlEncodedContent(new List<KeyValuePair<string, string>>()));
             var result = await response.Content.ReadAsStringAsync();
             string[] desks = result.Split("\n");
             foreach (var desk in desks)
@@ -129,6 +132,17 @@ namespace frontend
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if (button2.Enabled)
+            {
+                EnterDesk(1, 1);
+                return;
+            }
+            if (button3.Enabled)
+            {
+                EnterDesk(1, 2);
+                return;
+            }
+            MessageBox.Show("桌子已满");
         }
 
         private void button3_Click_1(object sender, EventArgs e)
@@ -175,8 +189,8 @@ namespace frontend
         {
             HttpClient httpClient = new HttpClient();
             string url = Url.Header + Url.GetDeskListUrl;
-            var response =  httpClient.PostAsync(new Uri(url),new FormUrlEncodedContent(new List<KeyValuePair<string, string>>())).Result;
-            var result =  response.Content.ReadAsStringAsync().Result;
+            var response = httpClient.PostAsync(new Uri(url), new FormUrlEncodedContent(new List<KeyValuePair<string, string>>())).Result;
+            var result = response.Content.ReadAsStringAsync().Result;
             string[] Desks = result.Split("\n");
             foreach (var desk in Desks)
             {
@@ -185,7 +199,7 @@ namespace frontend
                 {
                     break;
                 }
-  
+
                 switch (info[0])
                 {
                     case "1":
@@ -290,6 +304,51 @@ namespace frontend
         private void FormFindDesk_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (button8.Enabled)
+            {
+                EnterDesk(3, 1);
+                return;
+            }
+            if (button9.Enabled)
+            {
+                EnterDesk(3, 2);
+                return;
+            }
+            MessageBox.Show("桌子已满");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (button5.Enabled)
+            {
+                EnterDesk(2, 1);
+                return;
+            }
+            if (button6.Enabled)
+            {
+                EnterDesk(2, 2);
+                return;
+            }
+            MessageBox.Show("桌子已满");
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            if (button11.Enabled)
+            {
+                EnterDesk(4, 1);
+                return;
+            }
+            if (button12.Enabled)
+            {
+                EnterDesk(4, 2);
+                return;
+            }
+            MessageBox.Show("桌子已满");
         }
     }
 }

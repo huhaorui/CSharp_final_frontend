@@ -17,6 +17,7 @@ namespace frontend
 {
     public partial class FormLogin : Form
     {
+       
         public FormLogin()
         {
             InitializeComponent();
@@ -61,6 +62,10 @@ namespace frontend
                 var formFindDesk = new FormFindDesk();
                 formFindDesk.Show();
             }
+            else
+            {
+                MessageBox.Show("注册失败");
+            }
             httpClient.Dispose();
         }
         private void button_submit_Click(object sender, EventArgs e)
@@ -74,6 +79,7 @@ namespace frontend
                 new KeyValuePair<string, string>("uid", username),
                 new KeyValuePair<string, string>("password", password)
             };
+            
             var response = httpClient.PostAsync(new Uri(url), new FormUrlEncodedContent(paramList)).Result;
             var result = response.Content.ReadAsStringAsync().Result;
             if (result.Equals("OK"))
@@ -84,6 +90,10 @@ namespace frontend
                 var formFindDesk = new FormFindDesk();
 
                 formFindDesk.Show();
+            }
+            else
+            {
+                MessageBox.Show("登录遇到了问题，请检查账号或密码");
             }
             httpClient.Dispose();
         }

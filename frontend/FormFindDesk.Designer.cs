@@ -84,6 +84,7 @@
             this.button4.TabStop = false;
             this.button4.Text = "2桌";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -113,6 +114,7 @@
             this.button7.TabStop = false;
             this.button7.Text = "3桌";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -142,6 +144,7 @@
             this.button10.TabStop = false;
             this.button10.Text = "4桌";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button11
             // 
